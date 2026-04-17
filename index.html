@@ -24,7 +24,6 @@
             padding: 20px;
         }
 
-        /* ШАПКА */
         .header {
             text-align: right;
             padding: 10px 0 20px;
@@ -32,7 +31,6 @@
             margin-bottom: 30px;
         }
 
-        /* БЛОК ОБО МНЕ */
         .content__hello {
             display: flex;
             align-items: center;
@@ -100,7 +98,6 @@
             height: 20px;
         }
 
-        /* ЗАГОЛОВКИ */
         .content__about-header {
             font-size: 28px;
             margin: 40px 0 20px;
@@ -115,7 +112,6 @@
             color: #444;
         }
 
-        /* БЛОК ПРОЕКТОВ */
         .content__main-item {
             background: white;
             border-radius: 15px;
@@ -156,10 +152,6 @@
             text-decoration: none;
         }
 
-        .main-item__title a:hover {
-            text-decoration: underline;
-        }
-
         .main-item__description {
             margin-bottom: 15px;
             color: #555;
@@ -185,7 +177,6 @@
             text-decoration: none;
         }
 
-        /* ГАЛЕРЕЯ РИСУНКОВ */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -217,7 +208,6 @@
             font-size: 14px;
         }
 
-        /* БЛОК КОДА */
         .code-block {
             background: #2d2d2d;
             color: #f8f8f2;
@@ -233,7 +223,6 @@
             margin: 0;
         }
 
-        /* ПОДВАЛ */
         .footer {
             margin-top: 50px;
             padding: 30px 0;
@@ -254,7 +243,6 @@
             height: 24px;
         }
 
-        /* ВИДЕО */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -271,7 +259,6 @@
             height: 100%;
         }
 
-        /* АДАПТИВ */
         @media (max-width: 768px) {
             .content__hello {
                 flex-direction: column;
@@ -286,44 +273,30 @@
                 max-width: 100%;
             }
         }
-        
-        /* МЕТКИ ДЛЯ ЗАМЕНЫ */
-        .todo {
-            background: #ffeb3b;
-            color: #333;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
 <div class="main">
-    <!-- ШАПКА -->
     <div class="header">
         <span>Портфолио</span>
     </div>
 
     <!-- БЛОК ОБО МНЕ -->
     <div class="content__hello">
-        <!-- ⚠️ ЗАМЕНИТЬ НА СВОЁ ФОТО: avatar.png -->
-        <img class="content__hello-img" src="assets/avatar.png" alt="Фото" onerror="this.src='https://via.placeholder.com/150'">
+        <img class="content__hello-img" src="portfolio/avatar.png" alt="Фото">
         <div class="content__hello-text">
-            <span class="content__name">Привет, я [ТВОЁ ИМЯ]</span>
+            <span class="content__name">Привет, я Полина Тыдюк</span>
             <span class="content__description">
                 🎮 Геймдизайнер • Программист C# • 3D-художник<br>
-                Студент 1 курса, увлечен созданием игр и визуальных миров
             </span>
             <nav class="content__social">
-                <!-- ⚠️ ЗАМЕНИТЬ ССЫЛКИ НА СВОИ -->
-                <a href="https://github.com/ТВОЙ_НИК" target="_blank" class="content__social-item">
-                    <img src="assets/github.svg" alt="GitHub"> GitHub
+                <a href="https://github.com/Polina766" target="_blank" class="content__social-item">
+                    <img src="portfolio/github.svg" alt="GitHub"> GitHub
                 </a>
-                <a href="https://t.me/ТВОЙ_ТЕЛЕГРАМ" target="_blank" class="content__social-item">
-                    <img src="assets/telegram.svg" alt="Telegram"> Telegram
+                <a href="https://t.me/polinatidiuc" target="_blank" class="content__social-item">
+                    <img src="portfolio/telegram.svg" alt="Telegram"> Telegram
                 </a>
-                <a href="mailto:ТВОЯ_ПОЧТА@gmail.com" class="content__social-item">
+                <a href="mailto:polinatidiuc@gmail.com" class="content__social-item">
                     📧 Gmail
                 </a>
             </nav>
@@ -336,23 +309,21 @@
     <!-- ===== 1. UNITY ПРОЕКТ ===== -->
     <h2 class="content__subheader">🎮 Unity проект</h2>
     <div class="content__main-item project">
-        <!-- ⚠️ ЗАМЕНИТЬ СКРИНШОТ: unity_project.png -->
-        <img src="assets/unity_project.png" alt="Unity проект" onerror="this.src='https://via.placeholder.com/300x200'">
+        <img src="portfolio/unity_project.png" alt="Unity проект">
         <div>
             <div class="main-item__title">
-                <span>[НАЗВАНИЕ ПРОЕКТА]</span>
-                <span class="todo">⚠️ ВПИШИ НАЗВАНИЕ</span>
+                [ЗАМЕНИТЬ: НАЗВАНИЕ ПРОЕКТА]
             </div>
             <div class="main-item__description">
-                <p>Жанр: <span class="todo">⚠️ (например: Top-down шутер, платформер, RPG)</span></p>
-                <p>Что сделано: <span class="todo">⚠️ (например: система инвентаря, AI врагов, анимации)</span></p>
+                <p>Жанр: [ЗАМЕНИТЬ: например, Top-down шутер]</p>
+                <p>Что сделано: [ЗАМЕНИТЬ: система инвентаря, AI врагов]</p>
                 <p>Это мой основной проект на Unity. Здесь я применяю знания C# и геймдизайна.</p>
             </div>
             <div class="main-item__subdescription">
                 <p><span>Stack:</span> Unity, C#</p>
                 <p class="main-item__links">
-                    <a href="https://github.com/ТВОЙ_НИК/НАЗВАНИЕ_РЕПО" target="_blank">
-                        <span class="todo">⚠️ ССЫЛКА НА GITHUB</span>
+                    <a href="https://github.com/Polina766/Paullla.github.io" target="_blank">
+                        Ссылка на GitHub
                     </a>
                 </p>
             </div>
@@ -364,27 +335,24 @@
     <div class="content__main-item">
         <div class="main-item__title">Мои 3D-работы</div>
         <div class="main-item__description">
-            <p>Два готовых проекта в Blender. Ниже видео-рендеры:</p>
+            <p>Blender:</p>
         </div>
         
-        <!-- Видео 1 -->
         <div class="main-item__subdescription" style="margin-bottom: 20px;">
-            <p><strong>Проект 1:</strong> <span class="todo">⚠️ НАЗВАНИЕ РАБОТЫ</span></p>
-            <!-- ⚠️ ЗАМЕНИТЬ ВИДЕО: blender_1.mp4 -->
+            <p><strong>Проект 1:</strong> [ЗАМЕНИТЬ: НАЗВАНИЕ]</p>
             <div class="video-container">
-                <video controls poster="assets/blender_poster1.png">
-                    <source src="assets/blender_1.mp4" type="video/mp4">
+                <video controls poster="portfolio/blender_poster1.png">
+                    <source src="portfolio/blender_1.mp4" type="video/mp4">
                     Ваш браузер не поддерживает видео.
                 </video>
             </div>
         </div>
         
-        <!-- Видео 2 -->
         <div class="main-item__subdescription">
-            <p><strong>Проект 2:</strong> <span class="todo">⚠️ НАЗВАНИЕ РАБОТЫ</span></p>
+            <p><strong>Проект 2:</strong> [ЗАМЕНИТЬ: НАЗВАНИЕ]</p>
             <div class="video-container">
-                <video controls poster="assets/blender_poster2.png">
-                    <source src="assets/blender_2.mp4" type="video/mp4">
+                <video controls poster="portfolio/blender_poster2.png">
+                    <source src="portfolio/blender_2.mp4" type="video/mp4">
                     Ваш браузер не поддерживает видео.
                 </video>
             </div>
@@ -396,22 +364,21 @@
     <div class="content__main-item">
         <div class="main-item__title">Галерея</div>
         <div class="gallery">
-            <!-- ⚠️ ЗАМЕНИТЬ РИСУНКИ: drawing_1.jpg, drawing_2.jpg и т.д. -->
             <div class="gallery-item">
-                <img src="assets/drawing_1.jpg" alt="Рисунок 1" onerror="this.src='https://via.placeholder.com/200x180'">
-                <p>Рисунок 1 <span class="todo">⚠️ НАЗВАНИЕ</span></p>
+                <img src="portfolio/drawing_1.jpg" alt="Рисунок 1">
+                <p>[ЗАМЕНИТЬ: Название рисунка 1]</p>
             </div>
             <div class="gallery-item">
-                <img src="assets/drawing_2.jpg" alt="Рисунок 2" onerror="this.src='https://via.placeholder.com/200x180'">
-                <p>Рисунок 2 <span class="todo">⚠️ НАЗВАНИЕ</span></p>
+                <img src="portfolio/drawing_2.jpg" alt="Рисунок 2">
+                <p>[ЗАМЕНИТЬ: Название рисунка 2]</p>
             </div>
             <div class="gallery-item">
-                <img src="assets/drawing_3.jpg" alt="Рисунок 3" onerror="this.src='https://via.placeholder.com/200x180'">
-                <p>Рисунок 3 <span class="todo">⚠️ НАЗВАНИЕ</span></p>
+                <img src="portfolio/drawing_3.jpg" alt="Рисунок 3">
+                <p>[ЗАМЕНИТЬ: Название рисунка 3]</p>
             </div>
             <div class="gallery-item">
-                <img src="assets/drawing_4.jpg" alt="Рисунок 4" onerror="this.src='https://via.placeholder.com/200x180'">
-                <p>Рисунок 4 <span class="todo">⚠️ НАЗВАНИЕ</span></p>
+                <img src="portfolio/drawing_4.jpg" alt="Рисунок 4">
+                <p>[ЗАМЕНИТЬ: Название рисунка 4]</p>
             </div>
         </div>
     </div>
@@ -419,7 +386,6 @@
     <!-- ===== 4. C# ЛАБОРАТОРНЫЕ ===== -->
     <h2 class="content__subheader">💻 C# лабораторные работы</h2>
     
-    <!-- Лаба 1: MIB -->
     <div class="content__main-item">
         <div class="main-item__title">Лабораторная: "Люди в черном"</div>
         <div class="main-item__description">
@@ -454,13 +420,12 @@ sealed class АгентMIB : Гуманоид, IОружие
 }</pre>
         </div>
         <div class="main-item__links">
-            <a href="https://github.com/ТВОЙ_НИК/MIB_Lab" target="_blank">
-                <span class="todo">⚠️ ССЫЛКА НА GITHUB</span>
+            <a href="https://github.com/[ЗАМЕНИТЬ: ТВОЙ_НИК]/MIB_Lab" target="_blank">
+                Ссылка на GitHub
             </a>
         </div>
     </div>
 
-    <!-- Лаба 2: Автомобили -->
     <div class="content__main-item">
         <div class="main-item__title">Лабораторная: "Автомобили"</div>
         <div class="main-item__description">
@@ -488,27 +453,26 @@ class CarException : Exception
             if (ошибкаГод < 1980)
                 Console.WriteLine($"Год {ошибкаГод} меньше 1980!");
         }
-        // ... проверка скорости, аварий, стоимости
     }
 }</pre>
         </div>
         <div class="main-item__links">
-            <a href="https://github.com/ТВОЙ_НИК/CarLab" target="_blank">
-                <span class="todo">⚠️ ССЫЛКА НА GITHUB</span>
+            <a href="https://github.com/Polina766/CarLab" target="_blank">
+                Ссылка на GitHub
             </a>
         </div>
     </div>
 
     <!-- ПОДВАЛ -->
     <div class="footer">
-        <div>© [ТВОЁ ИМЯ] <span class="todo">⚠️ ВПИШИ ИМЯ</span> | Портфолио для стажировки</div>
+        <div>© [Тыдюк Полина] | Портфолио </div>
         <div>
             <nav class="footer__social">
-                <a href="https://github.com/ТВОЙ_НИК" target="_blank" class="footer__social-item">
-                    <img src="assets/github.svg" alt="GitHub">
+                <a href="https://github.com/Polina766" target="_blank" class="footer__social-item">
+                    <img src="portfolio/github.svg" alt="GitHub">
                 </a>
-                <a href="https://t.me/ТВОЙ_ТЕЛЕГРАМ" target="_blank" class="footer__social-item">
-                    <img src="assets/telegram.svg" alt="Telegram">
+                <a href="https://t.me/polinatidiuc" target="_blank" class="footer__social-item">
+                    <img src="portfolio/telegram.svg" alt="Telegram">
                 </a>
             </nav>
         </div>
@@ -516,7 +480,6 @@ class CarException : Exception
 </div>
 
 <script>
-    // Простая галерея: по клику на картинку открывается в новом окне
     const galleryItems = document.querySelectorAll('.gallery-item img');
     galleryItems.forEach(img => {
         img.addEventListener('click', () => {
