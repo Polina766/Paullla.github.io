@@ -1,172 +1,528 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Обо мне</title>
-    <link rel="stylesheet" type="text/css" href="/assets/styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Геймдизайнер</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ШАПКА */
+        .header {
+            text-align: right;
+            padding: 10px 0 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* БЛОК ОБО МНЕ */
+        .content__hello {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .content__hello-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
+        .content__hello-text {
+            flex: 1;
+        }
+
+        .content__name {
+            font-size: 32px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .content__description {
+            font-size: 18px;
+            color: #666;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .content__social {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .content__social-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #333;
+            padding: 8px 16px;
+            background: #f0f0f0;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .content__social-item:hover {
+            background: #333;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content__social-item img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ЗАГОЛОВКИ */
+        .content__about-header {
+            font-size: 28px;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #333;
+            display: inline-block;
+        }
+
+        .content__subheader {
+            font-size: 24px;
+            margin: 30px 0 20px;
+            color: #444;
+        }
+
+        /* БЛОК ПРОЕКТОВ */
+        .content__main-item {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .content__main-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .project {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .project img {
+            max-width: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .project > div {
+            flex: 1;
+        }
+
+        .main-item__title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .main-item__title a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .main-item__title a:hover {
+            text-decoration: underline;
+        }
+
+        .main-item__description {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .main-item__subdescription {
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .main-item__subdescription span {
+            font-weight: bold;
+        }
+
+        .main-item__links {
+            margin-top: 10px;
+        }
+
+        .main-item__links a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        /* ГАЛЕРЕЯ РИСУНКОВ */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* БЛОК КОДА */
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            margin: 15px 0;
+        }
+
+        .code-block pre {
+            margin: 0;
+        }
+
+        /* ПОДВАЛ */
+        .footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            color: #888;
+        }
+
+        .footer__social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .footer__social-item img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ВИДЕО */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* АДАПТИВ */
+        @media (max-width: 768px) {
+            .content__hello {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .project {
+                flex-direction: column;
+            }
+            
+            .project img {
+                max-width: 100%;
+            }
+        }
+        
+        /* МЕТКИ ДЛЯ ЗАМЕНЫ */
+        .todo {
+            background: #ffeb3b;
+            color: #333;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div class="main">
-        <div class="header">
-            <a href="/">
-                <span>EN</span>
-            </a>
-            <span>|</span>
-            <a href="/ru">
-                <span>RU</span>
-            </a>
+<div class="main">
+    <!-- ШАПКА -->
+    <div class="header">
+        <span>Портфолио</span>
+    </div>
+
+    <!-- БЛОК ОБО МНЕ -->
+    <div class="content__hello">
+        <!-- ⚠️ ЗАМЕНИТЬ НА СВОЁ ФОТО: avatar.png -->
+        <img class="content__hello-img" src="assets/avatar.png" alt="Фото" onerror="this.src='https://via.placeholder.com/150'">
+        <div class="content__hello-text">
+            <span class="content__name">Привет, я [ТВОЁ ИМЯ]</span>
+            <span class="content__description">
+                🎮 Геймдизайнер • Программист C# • 3D-художник<br>
+                Студент 1 курса, увлечен созданием игр и визуальных миров
+            </span>
+            <nav class="content__social">
+                <!-- ⚠️ ЗАМЕНИТЬ ССЫЛКИ НА СВОИ -->
+                <a href="https://github.com/ТВОЙ_НИК" target="_blank" class="content__social-item">
+                    <img src="assets/github.svg" alt="GitHub"> GitHub
+                </a>
+                <a href="https://t.me/ТВОЙ_ТЕЛЕГРАМ" target="_blank" class="content__social-item">
+                    <img src="assets/telegram.svg" alt="Telegram"> Telegram
+                </a>
+                <a href="mailto:ТВОЯ_ПОЧТА@gmail.com" class="content__social-item">
+                    📧 Gmail
+                </a>
+            </nav>
         </div>
-        <div class="content">
-            <div class="content__hello">
-                <img class="content__hello-img" src="/assets/img/avatar.png" alt="Avatar">
-                <div class="content__hello-text">
-                    <span class="content__name">
-                        <a href="/">Привет, я Святослав.</a>
-                    </span>
-                    <span class="content__description">Это мой шаблон <br/> для простого и красивого портфолио</span>
-                    <nav class="content__social">
-                        <a href="#link" target="_blank" class="content__social-item">
-                            <img src="/assets/img/icons/twitter.svg" alt="Twitter">
-                            <span>Twitter</span>
-                        </a>
-                        <a href="#link" target="_blank" class="content__social-item">
-                            <img src="/assets/img/icons/facebook.svg" alt="Facebook">
-                            <span>Facebook</span>
-                        </a>
-                        <a href="#link" target="_blank" class="content__social-item">
-                            <img src="/assets/img/icons/in.svg" alt="LinkedIn">
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="#link" target="_blank" class="content__social-item">
-                            <img src="/assets/img/icons/telegram.svg" alt="Telegram">
-                            <span>Telegram</span>
-                        </a>
-                    </nav>
-                </div>
+    </div>
+
+    <!-- МОИ РАБОТЫ -->
+    <h1 class="content__about-header">Мои работы</h1>
+
+    <!-- ===== 1. UNITY ПРОЕКТ ===== -->
+    <h2 class="content__subheader">🎮 Unity проект</h2>
+    <div class="content__main-item project">
+        <!-- ⚠️ ЗАМЕНИТЬ СКРИНШОТ: unity_project.png -->
+        <img src="assets/unity_project.png" alt="Unity проект" onerror="this.src='https://via.placeholder.com/300x200'">
+        <div>
+            <div class="main-item__title">
+                <span>[НАЗВАНИЕ ПРОЕКТА]</span>
+                <span class="todo">⚠️ ВПИШИ НАЗВАНИЕ</span>
             </div>
-            <div class="content__main">
-                <div class="content__main-item">
-                    <div class="main-item__description">
-                        <p>Это главная страница с примерами блоков. Вы можете комбинировать их так, как хотите.</p>
-                        <p>Загляните в <a href="/ru/example">примеры</a> чтобы посмотреть как можно комбинировать эти блоки</p>
-                    </div>
-                </div>
-                <h1 class="content__about-header">Иконки</h1>
-                <div class="content__main-item">
-                    <a href="#" class="content__social-item">
-                        <img src="/assets/img/icons/discord.svg" alt="discord">
-                        <img src="/assets/img/icons/dribbble.svg" alt="dribbble">
-                        <img src="/assets/img/icons/facebook.svg" alt="facebook">
-                        <img src="/assets/img/icons/github.svg" alt="github">
-                        <img src="/assets/img/icons/in.svg" alt="linkedin">
-                        <img src="/assets/img/icons/instagram.svg" alt="instagram">
-                        <img src="/assets/img/icons/medium.svg" alt="medium">
-                        <img src="/assets/img/icons/skype.svg" alt="skype">
-                        <img src="/assets/img/icons/telegram.svg" alt="telegram">
-                        <img src="/assets/img/icons/twitch.svg" alt="twitch">
-                        <img src="/assets/img/icons/twitter.svg" alt="twitter">
-                        <img src="/assets/img/icons/vk.svg" alt="vk">
-                        <img src="/assets/img/icons/whatsapp.svg" alt="whatsapp">
-                        <img src="/assets/img/icons/youtube.svg" alt="youtube">
-                    </a>
-                </div>
-                <h1 class="content__about-header">Блоки</h1>
-                <h2 class="content__subheader">Текст</h2>
-                <div class="content__main-item">
-                    <div class="main-item__description">
-                        <p>Я проделал огромный путь к своей нынешней точке. С детства я понимал, что буду разработчиком. Не просто разработчиком, а Разработчиком. Мой путь заключается в том, чтобы делать все возможное для своих клиентов. Я всегда стараюсь выяснить настоящие причины неисправностей и найти лучшее решение. Я думаю не только о коде и его качестве, но и о бизнес-логике и удовлетворенности клиентов.</p>
-                    </div>
-                </div>
-                <div class="content__main-item">
-                    <div class="main-item__description">
-                        <p>Каждый клиент, который у меня был, был счастлив работать со мной. Практически каждый второй клиент приходит ко мне по рекомендации. Я думаю, это говорит о многом.</p>
-                    </div>
-                </div>
-                <h2 class="content__subheader">Проекты</h2>
-                <div class="content__main-item project">
-                    <a data-fslightbox href="/assets/img/project.png">
-                        <img src="/assets/img/project.png" alt="project1">
-                    </a>
-                    <div>
-                        <div class="main-item__title">
-                            <a href="/ru/example/project.html"><span>Проект 1</span></a>
-                        </div>
-                        <div class="main-item__description">
-                            <p>Этот проект — мой бриллиант. Я очень горжусь работой, которую я там проделал.
-                                Этот клиент нашел меня, когда проект был почти в состоянии MVP. Но качество кода было недостаточно хорошим, поэтому я перестроил всю систему и сделал крепкий архитектурный фундамент.</p>
-                        </div>
-                        <div class="main-item__subdescription">
-                            <p><span>Stack:</span> Vue.js, Laravel, Socket.io</p>
-                            <p class="main-item__links"><a href=""><span>Source Code</span></a><span>|</span><a href=""><span>Preview</span></a> </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content__main-item project">
-                    <a data-fslightbox href="/assets/img/project2.png">
-                        <img src="/assets/img/project2.png" alt="project2">
-                    </a>
-                    <div>
-                        <div class="main-item__title">
-                            <a href="/ru/example/project.html"><span>Проект 2</span></a>
-                        </div>
-                        <div class="main-item__description">
-                            <p>Я работал над этим проектом 1,5 года.
-                                <br/>Я построил всю систему с нуля, и теперь это полностью рабочий проект
-                                с кучей довольных клиентов</p>
-                        </div>
-                        <div class="main-item__subdescription">
-                            <p><span>Stack:</span> Nuxt.js, Laravel</p>
-                            <p class="main-item__links"><a href=""><span>Source Code</span></a><span>|</span><a href=""><span>Preview</span></a> </p>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="content__subheader">Посты</h2>
-                <div class="content__main-item post">
-                    <article>
-                        <h2 class="main-item__title">
-                            <a href="#linktopost">Простая мысль</a>
-                        </h2>
-                        <p class="main-item__date">Ноя 22, 2022</p>
-                        <div class="main-item__description">
-                            <p>От одной свечи можно зажечь тысячи свечей, и срок службы свечи не сократится. Счастье никогда не уменьшается, когда им делятся.</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="content__main-item post">
-                    <article>
-                        <h2 class="main-item__title">
-                            <a href="#linktopost">Простая мысль 2</a>
-                        </h2>
-                        <p class="main-item__date">Сен 13, 2022</p>
-                        <div class="main-item__description">
-                            <p>Больше заботьтесь о своем характере, чем о своей репутации, потому что ваш характер — это то, чем вы являетесь на самом деле, а ваша репутация — это просто то, что другие думают о вас.</p>
-                        </div>
-                    </article>
-                </div>
+            <div class="main-item__description">
+                <p>Жанр: <span class="todo">⚠️ (например: Top-down шутер, платформер, RPG)</span></p>
+                <p>Что сделано: <span class="todo">⚠️ (например: система инвентаря, AI врагов, анимации)</span></p>
+                <p>Это мой основной проект на Unity. Здесь я применяю знания C# и геймдизайна.</p>
             </div>
-        </div>
-        <div class="footer">
-            <div>
-                <span>© Святослав Жиличев</span>
-            </div>
-            <div>
-                <nav class="footer__social">
-                    <a href="#link" target="_blank" class="footer__social-item">
-                        <img src="/assets/img/icons/twitter.svg" alt="Twitter">
+            <div class="main-item__subdescription">
+                <p><span>Stack:</span> Unity, C#</p>
+                <p class="main-item__links">
+                    <a href="https://github.com/ТВОЙ_НИК/НАЗВАНИЕ_РЕПО" target="_blank">
+                        <span class="todo">⚠️ ССЫЛКА НА GITHUB</span>
                     </a>
-                    <a href="#link" target="_blank" class="footer__social-item">
-                        <img src="/assets/img/icons/facebook.svg" alt="Facebook">
-                    </a>
-                    <a href="#link" target="_blank" class="footer__social-item">
-                        <img src="/assets/img/icons/in.svg" alt="LinkedIn">
-                    </a>
-                    <a href="#link" target="_blank" class="footer__social-item">
-                        <img src="/assets/img/icons/telegram.svg" alt="Telegram">
-                    </a>
-                </nav>
+                </p>
             </div>
         </div>
     </div>
-    <script src="/assets/scripts/fslightbox.js"></script>
+
+    <!-- ===== 2. BLENDER 3D ===== -->
+    <h2 class="content__subheader">🎨 3D-визуализация (Blender)</h2>
+    <div class="content__main-item">
+        <div class="main-item__title">Мои 3D-работы</div>
+        <div class="main-item__description">
+            <p>Два готовых проекта в Blender. Ниже видео-рендеры:</p>
+        </div>
+        
+        <!-- Видео 1 -->
+        <div class="main-item__subdescription" style="margin-bottom: 20px;">
+            <p><strong>Проект 1:</strong> <span class="todo">⚠️ НАЗВАНИЕ РАБОТЫ</span></p>
+            <!-- ⚠️ ЗАМЕНИТЬ ВИДЕО: blender_1.mp4 -->
+            <div class="video-container">
+                <video controls poster="assets/blender_poster1.png">
+                    <source src="assets/blender_1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </div>
+        
+        <!-- Видео 2 -->
+        <div class="main-item__subdescription">
+            <p><strong>Проект 2:</strong> <span class="todo">⚠️ НАЗВАНИЕ РАБОТЫ</span></p>
+            <div class="video-container">
+                <video controls poster="assets/blender_poster2.png">
+                    <source src="assets/blender_2.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. РИСУНКИ ===== -->
+    <h2 class="content__subheader">✏️ Рисунки</h2>
+    <div class="content__main-item">
+        <div class="main-item__title">Галерея</div>
+        <div class="gallery">
+            <!-- ⚠️ ЗАМЕНИТЬ РИСУНКИ: drawing_1.jpg, drawing_2.jpg и т.д. -->
+            <div class="gallery-item">
+                <img src="assets/drawing_1.jpg" alt="Рисунок 1" onerror="this.src='https://via.placeholder.com/200x180'">
+                <p>Рисунок 1 <span class="todo">⚠️ НАЗВАНИЕ</span></p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/drawing_2.jpg" alt="Рисунок 2" onerror="this.src='https://via.placeholder.com/200x180'">
+                <p>Рисунок 2 <span class="todo">⚠️ НАЗВАНИЕ</span></p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/drawing_3.jpg" alt="Рисунок 3" onerror="this.src='https://via.placeholder.com/200x180'">
+                <p>Рисунок 3 <span class="todo">⚠️ НАЗВАНИЕ</span></p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/drawing_4.jpg" alt="Рисунок 4" onerror="this.src='https://via.placeholder.com/200x180'">
+                <p>Рисунок 4 <span class="todo">⚠️ НАЗВАНИЕ</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 4. C# ЛАБОРАТОРНЫЕ ===== -->
+    <h2 class="content__subheader">💻 C# лабораторные работы</h2>
+    
+    <!-- Лаба 1: MIB -->
+    <div class="content__main-item">
+        <div class="main-item__title">Лабораторная: "Люди в черном"</div>
+        <div class="main-item__description">
+            <p>Консольное приложение на C# с использованием ООП: абстрактные классы, наследование, интерфейсы, полиморфизм, статические поля, работа с файлами.</p>
+            <p><strong>Что реализовано:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Абстрактный класс Инопланетянин</li>
+                <li>Классы-наследники: Гуманоид, Арахнид, АгентMIB</li>
+                <li>Интерфейсы IМаскировка и IОружие</li>
+                <li>Sealed классы и методы</li>
+                <li>Конструкторы (по умолчанию, с параметрами, копирования)</li>
+                <li>Статистика и константы</li>
+                <li>Запись/чтение в файл</li>
+            </ul>
+        </div>
+        <div class="code-block">
+            <pre>// Пример кода: Агент MIB
+sealed class АгентMIB : Гуманоид, IОружие
+{
+    public const string ПАРОЛЬ_MIB = "ЧЕРНЫЙ_КОСТЮМ";
+    public static int всегоАгентов = 0;
+    
+    public sealed override void Замаскироваться()
+    {
+        Console.WriteLine($"АГЕНТ {букваАгента} В ЧЕРНОМ КОСТЮМЕ!");
+    }
+    
+    public void Нейтрализовать(Инопланетянин цель)
+    {
+        цель.здоровье = 0;
+    }
+}</pre>
+        </div>
+        <div class="main-item__links">
+            <a href="https://github.com/ТВОЙ_НИК/MIB_Lab" target="_blank">
+                <span class="todo">⚠️ ССЫЛКА НА GITHUB</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Лаба 2: Автомобили -->
+    <div class="content__main-item">
+        <div class="main-item__title">Лабораторная: "Автомобили"</div>
+        <div class="main-item__description">
+            <p>Работа с классами, конструкторами, списками, исключениями и файловым вводом/выводом.</p>
+            <p><strong>Что реализовано:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>5 видов конструкторов</li>
+                <li>Собственный класс исключений CarException</li>
+                <li>Обработка ошибок ввода (try-catch-throw)</li>
+                <li>Сохранение и загрузка из файлов</li>
+                <li>Поиск самого "убитого" автомобиля</li>
+                <li>Статический счетчик объектов</li>
+            </ul>
+        </div>
+        <div class="code-block">
+            <pre>// Пример кода: обработка исключений
+class CarException : Exception
+{
+    public CarException(int x) { ошибкаГод = x; }
+    public CarException(string тип, int значение) { ... }
+    
+    public void obrabotka()
+    {
+        if (ошибкаГод != 0) {
+            if (ошибкаГод < 1980)
+                Console.WriteLine($"Год {ошибкаГод} меньше 1980!");
+        }
+        // ... проверка скорости, аварий, стоимости
+    }
+}</pre>
+        </div>
+        <div class="main-item__links">
+            <a href="https://github.com/ТВОЙ_НИК/CarLab" target="_blank">
+                <span class="todo">⚠️ ССЫЛКА НА GITHUB</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ПОДВАЛ -->
+    <div class="footer">
+        <div>© [ТВОЁ ИМЯ] <span class="todo">⚠️ ВПИШИ ИМЯ</span> | Портфолио для стажировки</div>
+        <div>
+            <nav class="footer__social">
+                <a href="https://github.com/ТВОЙ_НИК" target="_blank" class="footer__social-item">
+                    <img src="assets/github.svg" alt="GitHub">
+                </a>
+                <a href="https://t.me/ТВОЙ_ТЕЛЕГРАМ" target="_blank" class="footer__social-item">
+                    <img src="assets/telegram.svg" alt="Telegram">
+                </a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Простая галерея: по клику на картинку открывается в новом окне
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    galleryItems.forEach(img => {
+        img.addEventListener('click', () => {
+            window.open(img.src, '_blank');
+        });
+    });
+</script>
 </body>
 </html>
